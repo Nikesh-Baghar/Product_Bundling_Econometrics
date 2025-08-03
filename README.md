@@ -1,54 +1,70 @@
-# Product_Bundling_Opportunity
-Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation
-This project demonstrates a methodology for identifying product bundling opportunities using cointegration analysis and simulating the revenue impact of such a strategy. The project focuses on uncovering long-run relationships between product categories and leveraging deviations from these relationships to suggest optimal times for bundling, ultimately aiming to increase weekly sales.
+📦 Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation
+🧠 Topic
+This project leverages time-series econometric techniques to identify product category pairs that exhibit long-term co-movement (cointegration) and simulates the revenue impact of implementing a bundling strategy. The approach combines business insights with statistical modeling to inform marketing or pricing strategies in e-commerce or retail.
 
-Project Objectives:
+🎯 Objectives
+Identify Cointegrated Product Category Pairs
+Use Engle-Granger cointegration tests to detect categories that consistently move together over time, suggesting natural bundling opportunities.
 
-Identify Cointegrated Product Category Pairs: Utilize Engle-Granger cointegration tests to discover product categories that exhibit long-term co-movement, making them suitable candidates for bundling.
+Estimate Long-Run Relationships
+Use OLS regression to quantify the relationship (slope ratio) between sales of the cointegrated pairs, forming the basis of a potential bundle.
 
-Estimate Long-Run Relationships (OLS): For each cointegrated pair, fit Ordinary Least Squares (OLS) regression models to calculate bundle ratios (slope coefficients). These ratios guide the bundling of pairs, especially when sales of one category are underperforming.
+Detect Bundling Opportunities Using Z-Score Spreads
+Track deviations from the long-run relationship using z-scores to find windows of opportunity where one category underperforms—ideal moments to push a bundle.
 
-Detect Bundling Opportunities Based on Z-Score Spreads: Continuously monitor deviations from established long-run trends using z-scores of residual spreads. This helps in identifying specific weeks where bundling could be beneficial (i.e., when one category shows signs of underperformance).
+Simulate Revenue Uplift from Bundling Strategy
+Simulate increased sales (e.g., +5% uplift) during bundling weeks and use paired t-tests to determine if the uplift is statistically significant.
 
-Simulate Revenue Uplift from Bundling Strategy: Apply a hypothetical sales uplift (e.g., 5%) to simulate the potential increase in revenue due to the bundling strategy. A paired t-test is then used to statistically evaluate whether the observed increase in weekly sales is a real effect of bundling or merely random variation.
 
-Data
-The analysis uses several CSV files, which are loaded into pandas DataFrames:
+💼 Business Implications
+Strategic Bundling:
+Businesses can use statistical evidence to identify which products are naturally consumed together and offer bundled pricing to boost underperforming items.
 
-Data Consolidation and Preparation
-The raw data undergoes several processing steps to prepare it for analysis:
+Timing Promotions:
+Bundling based on z-score signals ensures promotions are launched when they’re most likely to succeed, avoiding constant discounts.
 
-Missing values in days_since_prior_order are filled with 0, treating the first order as the starting point for a user.
+Revenue Forecasting:
+The simulated model helps estimate revenue gains before implementation, aiding marketing teams in decision-making.
 
-Cumulative days since the first order are calculated for each user.
 
-Cumulative days are converted into week_no, starting from Week 1.
+🛠️ Techniques Used
+Data Preprocessing
 
-Department names are merged with product information.
+Merging multiple CSVs containing order, product, department, and aisle data.
 
-Order line items are merged with product-department data.
+Creating user-level cumulative week indicators.
 
-Order-level metadata (including week_no) is appended to each product line.
+Econometric Modeling
 
-A global_week index is created, assuming a common timeline for all users.
+Engle-Granger cointegration test (ADF and KPSS on residuals).
 
-Weekly total units sold per department are aggregated and pivoted.
+Error Correction Model (ECM)
 
-A log(1 + x) transformation is applied to stabilize variance and handle zero values, preparing the data for time series tests.
+Ordinary Least Squares (OLS) regression.
 
-Irrelevant product categories ('missing', 'other') are dropped from the dataset.
+Statistical Analysis
 
-The final processed DataFrame (weekly_sales_log) contains the log-transformed quantity sold for each product category per week, with a shape of (53, 19).
+Z-score calculations to identify divergence from equilibrium.
 
-Methodology
-The core of the methodology involves:
+Paired t-test for assessing uplift significance.
 
-Preparation: Transforming raw sales data into weekly, log-transformed units per department, suitable for time series analysis.
+Visualization
 
-Cointegration Testing: Applying the Engle-Granger test to identify pairs of product categories that have a stable, long-term relationship despite short-term fluctuations.
+Matplotlib and Seaborn for plotting sales trends and z-score spreads.
 
-OLS Regression: Estimating the long-run equilibrium relationship between cointegrated pairs.
 
-Z-Score Analysis: Monitoring the residuals from the OLS regression to identify when product sales deviate significantly from their long-run equilibrium, indicating bundling opportunities.
 
-Revenue Simulation & Statistical Testing: Simulating the impact of bundling on revenue and using a paired t-test to determine the statistical significance of the observed revenue uplift.
+📊 Interpretation of Output
+Cointegration Results:
+23 category pairs were found to be cointegrated, e.g., Canned Vegetables & Pasta Sauce, implying stable long-run demand patterns.
+
+OLS Regression Slopes:
+Slope values (e.g., 0.89) indicate the long-run proportional sales ratio between two categories. This helps define a bundle. 
+Z-Score Spread Signals:
+When the z-score of residuals deviates significantly (e.g., |z| > 1.5), it suggests that one category is underperforming relative to the other, signaling a good bundling week.
+
+Simulated Uplift:
+Hypothetically adding a 5% uplift during signal weeks resulted in a statistically significant increase in weekly sales (p-value < 0.05 from paired t-test).
+
+Customer Retention & Cross-Sell:
+Properly timed bundles can improve cart value and introduce users to complementary categories, potentially increasing LTV
