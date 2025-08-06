@@ -1,8 +1,8 @@
-📦 Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation    
-🧠 Topic    
+# 📦 Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation    
+# 🧠 Topic    
 This project leverages time-series econometric techniques to identify product category pairs that exhibit long-term co-movement (cointegration) and simulates the revenue impact of implementing a bundling strategy. The approach combines business insights with statistical modeling to inform marketing or pricing strategies in e-commerce or retail.   
  
-🎯 Objectives    
+# 🎯 Objectives    
 Identify Cointegrated Product Category Pairs   
 Use Engle-Granger cointegration tests to detect categories that consistently move together over time, suggesting natural bundling opportunities.   
 
@@ -16,7 +16,7 @@ Simulate Revenue Uplift from Bundling Strategy
 Simulate increased sales (e.g., +5% uplift) during bundling weeks and use paired t-tests to determine if the uplift is statistically significant.   
 
 
-💼 Business Implications    
+# 💼 Business Implications    
 Strategic Bundling:    
 Businesses can use statistical evidence to identify which products are naturally consumed together and offer bundled pricing to boost underperforming items.   
 
@@ -27,7 +27,7 @@ Revenue Forecasting:
 The simulated model helps estimate revenue gains before implementation, aiding marketing teams in decision-making.   
 
  
-🛠️ Techniques Used  
+# 🛠️ Techniques Used  
 Data Preprocessing    
 
 Merging multiple CSVs containing order, product, department, and aisle data.     
@@ -54,7 +54,7 @@ Matplotlib and Seaborn for plotting sales trends and z-score spreads.
 
 
 
-📊 Interpretation of Output    
+# 📊 Interpretation of Output    
 Cointegration Results:    
 23 category pairs were found to be cointegrated, e.g., Canned Vegetables & Pasta Sauce, implying stable long-run demand patterns.    
 
