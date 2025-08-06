@@ -9,7 +9,7 @@ Use Engle-Granger cointegration tests to detect categories that consistently mov
 Estimate Long-Run Relationships   
 Use OLS regression to quantify the relationship (slope ratio) between sales of the cointegrated pairs, forming the basis of a potential bundle.   
 
-Detect Bundling Opportunities Using Z-Score Spreads   
+Error Correction Model and Detect Bundling Opportunities    
 Track deviations from the long-run relationship using z-scores to find windows of opportunity where one category underperforms—ideal moments to push a bundle.   
 
 Simulate Revenue Uplift from Bundling Strategy   
@@ -68,3 +68,10 @@ Hypothetically adding a 5% uplift during signal weeks resulted in a statisticall
 
 Customer Retention & Cross-Sell:
 Properly timed bundles can improve cart value and introduce users to complementary categories, potentially increasing LTV
+
+# Assumptions
+1) All customers started buying from the same week.     
+2) Product category with higher total sales is considered as independent variable in linear regression.    
+3) Log values of sales are used.     
+4) z-score of less than -1.5 is considered to detect underperformance of a product category.  
+5) 5% of uplift in sales is assumed for t-test.  
