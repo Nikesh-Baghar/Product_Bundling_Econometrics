@@ -1,4 +1,23 @@
-# 📦 Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation    
+# 📦 Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation 
+## Want to skip reading the content?? Watch my video for a simple explanation of this project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🧠 Topic    
 This project leverages time-series econometric techniques to identify product category pairs that exhibit long-term co-movement (cointegration) and simulates the revenue impact of implementing a bundling strategy. The approach combines business insights with statistical modeling to inform marketing or pricing strategies in e-commerce or retail.   
  
