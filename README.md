@@ -1,5 +1,11 @@
 # 📦 Detecting Bundling Opportunities Using Cointegration and Revenue Impact Simulation 
-## Want to skip reading the content?? Watch my video for a simple explanation of this project.
+
+### Want to skip reading the content??
+
+### Watch my video for a simple explanation of this project.
+
+https://www.loom.com/share/ca4000a0d8754019b539c964650b965d?sid=f02cb1ce-599b-4b5f-9990-98be30185b77
+
 
 
 
